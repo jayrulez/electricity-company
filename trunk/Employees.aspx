@@ -65,7 +65,6 @@
                                         <asp:BoundField DataField="contact_num" HeaderText="Contact #" 
                                             SortExpression="contact_num" />
                                         <asp:CommandField ShowEditButton="True" />
-                                        <asp:CommandField ShowDeleteButton="True" />
                                     </Columns>
                                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                                     <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
@@ -77,12 +76,8 @@
                                     ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
                                     SelectCommand="SELECT [first_name], [last_name], [street], [province], [city], [country], [contact_num], [id] FROM [employee]"
                                     
-                                    UpdateCommand="UPDATE [employee] SET [first_name] = @first_name, [last_name] = @last_name, [street] = @street, [province] = @province, [city] = @city, [country] = @country, [contact_num] = @contact_num WHERE [id] = @id" 
-                                    DeleteCommand="DELETE FROM [employee] WHERE [id] = @id" 
+                                    UpdateCommand="UPDATE [employee] SET [first_name] = @first_name, [last_name] = @last_name, [street] = @street, [province] = @province, [city] = @city, [country] = @country, [contact_num] = @contact_num WHERE [id] = @id"  
                                     InsertCommand="INSERT INTO [employee] ([first_name], [last_name], [street], [province], [city], [country], [contact_num]) VALUES (@first_name, @last_name, @street, @province, @city, @country, @contact_num)">
-                                    <DeleteParameters>
-                                        <asp:Parameter Name="id" Type="Int32" />
-                                    </DeleteParameters>
                                     <InsertParameters>
                                         <asp:Parameter Name="first_name" Type="String" />
                                         <asp:Parameter Name="last_name" Type="String" />
