@@ -27,10 +27,11 @@
 			<div id="sidebar">
 				<div id="side-nav">
 					<ul>
-						<li><a class="active" href="">Manage Employees</a></li>
-						<li><a href="">Manage Customers</a></li>
-						<li><a href="">Payment Services</a></li>
-						<li><a href="">Make Payments</a></li>
+						<li><a href="Employees.aspx" class="active">Employees</a></li>
+						<li><a href="Customers.aspx" >Customers</a></li>
+						<li><a href="Billing.aspx" >Billing</a></li>
+						<li><a href="PaymentServices.aspx" >Payment Services</a></li>
+						<li><a href="Payments.aspx" >Payments</a></li>
 					</ul>
 				</div>
 			</div>

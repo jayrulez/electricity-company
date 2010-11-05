@@ -1,5 +1,5 @@
 a {color:#0F7CC5;}
-a:active {color: #e57200;}
+a:active {color: #e57200;cursor: pointer;}
 
 body {
 	text-align: center;
