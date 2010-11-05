@@ -47,7 +47,8 @@
                                     AllowSorting="True" AutoGenerateColumns="False" DataSourceID="ccDb" 
                                     EnableModelValidation="True" BackColor="White" BorderColor="#999999" 
                                     BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" 
-                                    AllowPaging="True">
+                                    AllowPaging="True" DataKeyNames="id" DataMember="DefaultView" 
+                                    ShowFooter="True">
                                     <AlternatingRowStyle BackColor="#DCDCDC" />
                                     <Columns>
                                         <asp:BoundField DataField="first_name" HeaderText="First Name" 
@@ -74,7 +75,33 @@
                                 </asp:GridView>
                                 <asp:SqlDataSource ID="ccDb" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
-                                    SelectCommand="SELECT [first_name], [last_name], [street], [province], [city], [country], [contact_num] FROM [employee]">
+                                    SelectCommand="SELECT [first_name], [last_name], [street], [province], [city], [country], [contact_num], [id] FROM [employee]"
+                                    
+                                    UpdateCommand="UPDATE [employee] SET [first_name] = @first_name, [last_name] = @last_name, [street] = @street, [province] = @province, [city] = @city, [country] = @country, [contact_num] = @contact_num WHERE [id] = @id" 
+                                    DeleteCommand="DELETE FROM [employee] WHERE [id] = @id" 
+                                    InsertCommand="INSERT INTO [employee] ([first_name], [last_name], [street], [province], [city], [country], [contact_num]) VALUES (@first_name, @last_name, @street, @province, @city, @country, @contact_num)">
+                                    <DeleteParameters>
+                                        <asp:Parameter Name="id" Type="Int32" />
+                                    </DeleteParameters>
+                                    <InsertParameters>
+                                        <asp:Parameter Name="first_name" Type="String" />
+                                        <asp:Parameter Name="last_name" Type="String" />
+                                        <asp:Parameter Name="street" Type="String" />
+                                        <asp:Parameter Name="province" Type="String" />
+                                        <asp:Parameter Name="city" Type="String" />
+                                        <asp:Parameter Name="country" Type="String" />
+                                        <asp:Parameter Name="contact_num" Type="String" />
+                                    </InsertParameters>
+                                    <UpdateParameters>
+                                        <asp:Parameter Name="first_name" Type="String" />
+                                        <asp:Parameter Name="last_name" Type="String" />
+                                        <asp:Parameter Name="street" Type="String" />
+                                        <asp:Parameter Name="province" Type="String" />
+                                        <asp:Parameter Name="city" Type="String" />
+                                        <asp:Parameter Name="country" Type="String" />
+                                        <asp:Parameter Name="contact_num" Type="String" />
+                                        <asp:Parameter Name="id" Type="Int32" />
+                                    </UpdateParameters>
                                 </asp:SqlDataSource>
                             </div>
                             </form>
