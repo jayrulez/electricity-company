@@ -27,7 +27,7 @@
 			<div id="sidebar">
 				<div id="side-nav">
 					<ul>
-						<li><a href="Employees.aspx" class="active">Employees</a></li>
+						<li><a href="Employees.aspx">Employees</a></li>
 						<li><a href="Customers.aspx" >Customers</a></li>
 						<li><a href="Billing.aspx" >Billing</a></li>
 						<li><a href="PaymentServices.aspx" >Payment Services</a></li>
