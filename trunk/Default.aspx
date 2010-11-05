@@ -7,12 +7,17 @@
     <title>OnWind</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="language" content="en_us" />
-    <link rel="stylesheet" type="text/css" href="./css/common.css" />
-    <link rel="stylesheet" type="text/css" href="./css/layout.css" />
-    <title>OnWind</title>
+    <link rel="stylesheet" type="text/css" href="./Css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./Css/layout.css" />
     <!--[if lt IE 8]>
-    <link rel="stylesheet" type="text/css" href="./css/ie.css" />
+    <link rel="stylesheet" type="text/css" href="./Css/ie.css" />
     <![endif]-->
+    <script src="./Scripts/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { 
+            
+        });
+    </script>
 </head>
 <body>
 	<div id="page">
@@ -22,20 +27,21 @@
 			<div id="sidebar">
 				<div id="side-nav">
 					<ul>
-						<li><a href="">Link</a></li>
-						<li><a href="">Link</a></li>
-						<li><a href="">Link</a></li>
-						<li><a href="">Link</a></li>
-						<li><a href="">Link</a></li>
+						<li><a class="active" href="">Manage Employees</a></li>
+						<li><a href="">Manage Customers</a></li>
+						<li><a href="">Payment Services</a></li>
+						<li><a href="">Make Payments</a></li>
 					</ul>
 				</div>
 			</div>
 			<div id="widebar">
-				<div id="widebar-content">
-					<div id="widebar-header">
-					</div>
-					<div id="widebar-body">
-					</div>
+				<div id="widebar-content-container">
+                    <div id="widebar-content">
+					    <div id="widebar-header">
+					    </div>
+					    <div id="widebar-body">
+					    </div>
+                    </div>
 				</div>
 			</div>
 		</div>
