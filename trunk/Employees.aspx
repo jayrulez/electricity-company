@@ -27,7 +27,7 @@
 			<div id="sidebar">
 				<div id="side-nav">
 					<ul>
-						<li><a href="Employees.aspx" class="active">Employees</a></li>
+						<li><a href="Employees.aspx">Employees</a></li>
 						<li><a href="Customers.aspx" >Customers</a></li>
 						<li><a href="Billing.aspx" >Billing</a></li>
 						<li><a href="PaymentServices.aspx" >Payment Services</a></li>
@@ -41,26 +41,36 @@
 					    <div id="widebar-header">
 					    </div>
 					    <div id="widebar-body">
-                            <form id="form1" runat="server">
+                            <form id="formEmployeeGrid" runat="server">
                             <div>
-		                        <asp:GridView ID="GridViewEmployees" runat="server" AllowPaging="True" 
+		                        <asp:GridView ID="GridViewEmployees" runat="server" 
                                     AllowSorting="True" AutoGenerateColumns="False" DataSourceID="ccDb" 
-                                    EnableModelValidation="True">
+                                    EnableModelValidation="True" BackColor="White" BorderColor="#999999" 
+                                    BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical" 
+                                    AllowPaging="True">
+                                    <AlternatingRowStyle BackColor="#DCDCDC" />
                                     <Columns>
-                                        <asp:BoundField DataField="first_name" HeaderText="first_name" 
+                                        <asp:BoundField DataField="first_name" HeaderText="First Name" 
                                             SortExpression="first_name" />
-                                        <asp:BoundField DataField="last_name" HeaderText="last_name" 
+                                        <asp:BoundField DataField="last_name" HeaderText="Last Name" 
                                             SortExpression="last_name" />
-                                        <asp:BoundField DataField="street" HeaderText="street" 
+                                        <asp:BoundField DataField="street" HeaderText="Street" 
                                             SortExpression="street" />
-                                        <asp:BoundField DataField="province" HeaderText="province" 
+                                        <asp:BoundField DataField="province" HeaderText="Province" 
                                             SortExpression="province" />
-                                        <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
-                                        <asp:BoundField DataField="country" HeaderText="country" 
+                                        <asp:BoundField DataField="city" HeaderText="City" SortExpression="city" />
+                                        <asp:BoundField DataField="country" HeaderText="Country" 
                                             SortExpression="country" />
-                                        <asp:BoundField DataField="contact_num" HeaderText="contact_num" 
+                                        <asp:BoundField DataField="contact_num" HeaderText="Contact #" 
                                             SortExpression="contact_num" />
+                                        <asp:CommandField ShowEditButton="True" />
+                                        <asp:CommandField ShowDeleteButton="True" />
                                     </Columns>
+                                    <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                                    <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                                    <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                                    <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
                                 </asp:GridView>
                                 <asp:SqlDataSource ID="ccDb" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
