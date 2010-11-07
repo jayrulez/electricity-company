@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -18,6 +18,16 @@
 
         });
     </script>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            width: 340px;
+        }
+    </style>
 </head>
 <body>
 	<div id="page">
@@ -103,6 +113,59 @@
 										<asp:Parameter Name="id" Type="Int32" />
 									</DeleteParameters>
                                 </asp:SqlDataSource>
+                            </div>
+                            <div>
+                                <table class="style1">
+                                    <tr>
+                                        <td class="style2">
+                                            Service Name</td>
+                                        <td>
+                                            <asp:TextBox ID="txtServiceName" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style2">
+                                            Branch</td>
+                                        <td>
+                                            <asp:TextBox ID="txtBranch" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style2">
+                                            Street</td>
+                                        <td>
+                                            <asp:TextBox ID="txtStreet" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style2">
+                                            Province</td>
+                                        <td>
+                                            <asp:TextBox ID="txtProvince" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style2">
+                                            City</td>
+                                        <td>
+                                            <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style2">
+                                            Country</td>
+                                        <td>
+                                            <asp:TextBox ID="txtCountry" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style2">
+                                            Service Fee</td>
+                                        <td>
+                                            <asp:TextBox ID="txtService" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                             </form>
 					    </div>

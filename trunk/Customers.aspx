@@ -18,6 +18,16 @@
 
         });
     </script>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            width: 334px;
+        }
+    </style>
 </head>
 <body>
 	<div id="page">
@@ -107,6 +117,66 @@
 										<asp:Parameter Name="id" Type="Int32" />
 									</DeleteParameters>
                                 </asp:SqlDataSource>
+                            </div>
+                            <div>
+                                <table class="style1">
+                                    <tr>
+                                        <td class="style2">
+                                            First Name</td>
+                                        <td>
+                                            <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style2">
+                                            Last Name</td>
+                                        <td>
+                                            <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style2">
+                                            Street</td>
+                                        <td>
+                                            <asp:TextBox ID="txtStreet" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style2">
+                                            Province</td>
+                                        <td>
+                                            <asp:TextBox ID="txtProvince" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style2">
+                                            City</td>
+                                        <td>
+                                            <asp:TextBox ID="txtCountry" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style2">
+                                            Country</td>
+                                        <td>
+                                            <asp:TextBox ID="txtEmailAddress" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style2">
+                                            Email Address</td>
+                                        <td>
+                                            <asp:TextBox ID="txtContactNumber" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style2">
+                                            Contact Number</td>
+                                        <td>
+                                            <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                             </form>
 					    </div>
