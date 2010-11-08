@@ -72,7 +72,9 @@
                             </asp:GridView>
 					        <asp:SqlDataSource ID="ccDb" runat="server" 
                                 ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
-                                SelectCommand="SELECT [id], [street], [province], [city], [country] FROM [premise]">
+                                SelectCommand="SELECT [id], [street], [province], [city], [country] FROM [premise]" 
+                                InsertCommand="INSERT INTO [premise] ([street], [province], [city], [country]) VALUES (@street, @province, @city, @country)"
+                                UpdateCommand="UPDATE [premise] SET [street]=@street, [province]=@province, [city]=@city, [country]=@country WHERE [id]=@id">
                             </asp:SqlDataSource>
                             <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" 
                                 DataSourceID="ccDb" DefaultMode="Insert" EnableModelValidation="True">

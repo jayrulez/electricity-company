@@ -78,11 +78,9 @@
                                 </asp:GridView>
                                 <asp:SqlDataSource ID="ccDb" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
-                                    SelectCommand="SELECT [name], [branch], [street], [province], [city], [country], [service_fee], [id] FROM [payment_service]"
-                                    
-                                    
-                                    UpdateCommand="UPDATE [payment_service] SET [name] = @name, [branch] = @branch, [street] = @street, [province] = @province, [city] = @city, [country] = @country, [service_fee] = @service_fee WHERE [id] = @id" 
-                                    DeleteCommand="DELETE FROM [payment_service] WHERE [id] = @id">
+                                    SelectCommand="SELECT [name], [branch], [street], [province], [city], [country], [service_fee], [id] FROM [payment_service]" 
+                                    InsertCommand="INSERT INTO [payment_service] ([name], [branch], [street], [province], [city], [country], [service_fee]) VALUES (@name, @branch, @street, @province, @city, @country, @service_fee)"                                    
+                                    UpdateCommand="UPDATE [payment_service] SET [name] = @name, [branch] = @branch, [street] = @street, [province] = @province, [city] = @city, [country] = @country, [service_fee] = @service_fee WHERE [id] = @id">
                                     <UpdateParameters>
                                         <asp:Parameter Name="name" Type="String" />
                                         <asp:Parameter Name="branch" Type="String" />
@@ -93,9 +91,6 @@
 										<asp:Parameter Name="service_fee" Type="Single" />
                                         <asp:Parameter Name="id" Type="Int32" />
                                     </UpdateParameters>
-									<DeleteParameters>
-										<asp:Parameter Name="id" Type="Int32" />
-									</DeleteParameters>
                                 </asp:SqlDataSource>
                             </div>
                             <div>

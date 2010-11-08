@@ -75,10 +75,12 @@
                                 </asp:GridView>
                                 <asp:SqlDataSource ID="ccDb" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
-                                    SelectCommand="SELECT [amount], [method], [pay_date], [paid_by], [billing_id], [service_id], [id] FROM [payment]">
+                                    SelectCommand="SELECT [amount], [method], [pay_date], [paid_by], [billing_id], [service_id], [id] FROM [payment]"
+                                    InsertCommand="INSERT INTO [payment] ([amount], [method], [pay_date], [paid_by], [billing_id], [service_id]) VALUES (@amount, @method, GETDATE(), @paid_by, @billing_id, @service_id)">
                                 </asp:SqlDataSource>
                             </div>
                             <div>
+                                
                                 <asp:FormView ID="FormViewPayment" runat="server" BackColor="White" 
                                     BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" 
                                     DataSourceID="ccDb" EnableModelValidation="True" GridLines="Vertical" 
@@ -92,21 +94,32 @@
                                             Text='<%# Bind("amount") %>' />
                                         <br />
                                         <span class="txtLabel">Method:</span>
-                                        <asp:TextBox ID="methodTextBox" runat="server" 
-                                            Text='<%# Bind("method") %>' />
-                                        <br />
-                                        <span class="txtLabel">Date:</span>
-                                        <asp:TextBox ID="pay_dateTextBox" runat="server" Text='<%# Bind("pay_date") %>' />
+                                            <asp:DropDownList ID="DropDownList2" runat="server" Text='<%# Bind("method") %>'>
+        <asp:ListItem Value="cash">Cash</asp:ListItem>
+        <asp:ListItem Value="ccard">Credit Card</asp:ListItem>
+    </asp:DropDownList>
                                         <br />
                                         <span class="txtLabel">Paid By:</span>
                                         <asp:TextBox ID="paid_byTextBox" runat="server" 
                                             Text='<%# Bind("paid_by") %>' />
                                         <br />
                                         <span class="txtLabel">Billing Id:</span>
-                                        <asp:TextBox ID="billing_idTextBox" runat="server" Text='<%# Bind("billing_id") %>' />
+                                        <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="ccDbx" Text='<%# Bind("billing_id") %>'
+        DataTextField="id" DataValueField="id">
+    </asp:DropDownList>
+    <asp:SqlDataSource ID="ccDbx" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
+        SelectCommand="SELECT [id], [cycle_start], [cycle_end], [consumption], [due_date], [current_charge], [previous_balance], [total_charge], [meter_id] FROM [billing]">
+    </asp:SqlDataSource>
                                         <br />
                                         <span class="txtLabel">Service:</span>
-                                        <asp:DropDownList ID="ddlService" runat="server" Text='<%# Bind("service_id") %>' />
+                                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ccDbi" 
+                                    DataTextField="name" DataValueField="id" Text='<%# Bind("service_id") %>' >
+                                        </asp:DropDownList>
+                                        <asp:SqlDataSource ID="ccDbi" runat="server" 
+                                            ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
+                                            SelectCommand="SELECT [id], [name], [branch], [province], [street], [city], [country], [service_fee] FROM [payment_service]">
+                                        </asp:SqlDataSource>
                                         <br />
                                         <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
                                             CommandName="Insert" Text="Insert" />

@@ -70,7 +70,9 @@
                                 </asp:GridView>
                                 <asp:SqlDataSource ID="ccDb" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
-                                    SelectCommand="SELECT [install_date], [model], [premise_id], [id] FROM [meter]">
+                                    SelectCommand="SELECT [install_date], [model], [premise_id], [id] FROM [meter]"
+                                    InsertCommand="INSERT INTO [meter] ([install_date], [model], [premise_id]) VALUES (GETDATE(), @model, @premise_id)" 
+                                    UpdateCommand="UPDATE [meter] SET [install_date]=@install_date, [model]=@model, [premise_id]=@premise_id WHERE [id]=@id">
                                 </asp:SqlDataSource>
                             </div>
                             <div>
@@ -82,17 +84,18 @@
                                     <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
                                     <InsertItemTemplate>
                                         <h3>Add New Meter</h3>
-                                        <span class="txtLabel">Installation Date:</span>
-                                        <asp:TextBox ID="amountTextBox" runat="server" 
-                                            Text='<%# Bind("install_date") %>' />
-                                        <br />
                                         <span class="txtLabel">Model:</span>
                                         <asp:TextBox ID="modelTextBox" runat="server" 
                                             Text='<%# Bind("model") %>' />
                                         <br />
                                         <span class="txtLabel">Premise Id:</span>
-                                        <asp:TextBox ID="premise_idTextBox" runat="server" 
-                                            Text='<%# Bind("premise_id") %>' />
+                                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ccDbi" 
+                                            DataTextField="street" DataValueField="id" Text='<%# Bind("premise_id") %>'>
+                                        </asp:DropDownList>
+                                        <asp:SqlDataSource ID="ccDbi" runat="server" 
+                                            ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
+                                            SelectCommand="SELECT [id], [street], [province], [city], [country] FROM [premise]">
+                                        </asp:SqlDataSource>
                                         <br />
                                         <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
                                             CommandName="Insert" Text="Insert" />
