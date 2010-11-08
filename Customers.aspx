@@ -26,7 +26,6 @@
 		<div id="content" class="clearfix">
 			<div id="sidebar">
 				<div id="side-nav">
-                    
 					<ul>
 						<li><a href="Default.aspx">Management Home</a></li>
 						<li><a href="Employees.aspx">Employees</a></li>

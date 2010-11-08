@@ -24,7 +24,9 @@ body {
 }
 
 #header {
-
+	background: #3b5998;
+	border-bottom-radius: 4px;
+	padding: 10px;
 }
 
 #content {
