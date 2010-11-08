@@ -18,16 +18,6 @@
 
         });
     </script>
-    <style type="text/css">
-        .style1
-        {
-            width: 100%;
-        }
-        .style2
-        {
-            width: 340px;
-        }
-    </style>
 </head>
 <body>
 	<div id="page">
@@ -38,7 +28,7 @@
 				<div id="side-nav">
                     
 					<ul>
-						<li><a href="Default.aspx">Home</a></li>
+						<li><a href="Default.aspx">Management Home</a></li>
 						<li><a href="Employees.aspx">Employees</a></li>
 						<li><a href="Premesis.aspx" >Premesis</a></li>
 						<li><a href="Meters.aspx" >Meters</a></li>
