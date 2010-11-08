@@ -64,7 +64,7 @@
                                         <asp:BoundField DataField="province" HeaderText="Province" 
                                             SortExpression="province" />
                                         <asp:BoundField DataField="city" HeaderText="City" SortExpression="city" />
-                                        <asp:BoundField DataField="country" HeaderText="country" 
+                                        <asp:BoundField DataField="country" HeaderText="Country" 
                                             SortExpression="country" />
 										<asp:BoundField DataField="service_fee" HeaderText="Service Fee" 
 											SortExpression="service_fee" />
@@ -133,6 +133,8 @@
                                             CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                                     </InsertItemTemplate>
                                 </asp:FormView>
+                            </div>
+                            <div>
                             </div>
                             </form>
 					    </div>
