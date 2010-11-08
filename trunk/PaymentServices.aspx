@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="PaymentServices.aspx.cs" Inherits="PaymentServices" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="PaymentServices.aspx.cs" Inherits="PaymentServices" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -70,12 +70,11 @@
                                         <asp:BoundField DataField="province" HeaderText="Province" 
                                             SortExpression="province" />
                                         <asp:BoundField DataField="city" HeaderText="City" SortExpression="city" />
-                                        <asp:BoundField DataField="country" HeaderText="Country" 
+                                        <asp:BoundField DataField="country" HeaderText="country" 
                                             SortExpression="country" />
 										<asp:BoundField DataField="service_fee" HeaderText="Service Fee" 
 											SortExpression="service_fee" />
                                         <asp:CommandField ShowEditButton="True" />
-										<asp:CommandField ShowDeleteButton="True" />
                                     </Columns>
                                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                                     <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
@@ -87,18 +86,9 @@
                                     ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
                                     SelectCommand="SELECT [name], [branch], [street], [province], [city], [country], [service_fee], [id] FROM [payment_service]"
                                     
-                                    UpdateCommand="UPDATE [payment_service] SET [name] = @name, [branch] = @branch, [street] = @street, [province] = @province, [city] = @city, [country] = @country, [service_fee] = @service_fee WHERE [id] = @id"  
-                                    InsertCommand="INSERT INTO [payment_service] ([name], [branch], [street], [province], [city], [country], [service_fee]) VALUES (@name, @branch, @street, @province, @city, @country, @service_fee)"
+                                    
+                                    UpdateCommand="UPDATE [payment_service] SET [name] = @name, [branch] = @branch, [street] = @street, [province] = @province, [city] = @city, [country] = @country, [service_fee] = @service_fee WHERE [id] = @id" 
                                     DeleteCommand="DELETE FROM [payment_service] WHERE [id] = @id">
-									<InsertParameters>
-                                        <asp:Parameter Name="name" Type="String" />
-                                        <asp:Parameter Name="branch" Type="String" />
-                                        <asp:Parameter Name="street" Type="String" />
-                                        <asp:Parameter Name="province" Type="String" />
-                                        <asp:Parameter Name="city" Type="String" />
-                                        <asp:Parameter Name="country" Type="String" />
-										<asp:Parameter Name="service_fee" Type="Decimal" />
-                                    </InsertParameters>
                                     <UpdateParameters>
                                         <asp:Parameter Name="name" Type="String" />
                                         <asp:Parameter Name="branch" Type="String" />
@@ -106,7 +96,7 @@
                                         <asp:Parameter Name="province" Type="String" />
                                         <asp:Parameter Name="city" Type="String" />
                                         <asp:Parameter Name="country" Type="String" />
-										<asp:Parameter Name="service_fee" Type="Decimal" />
+										<asp:Parameter Name="service_fee" Type="Single" />
                                         <asp:Parameter Name="id" Type="Int32" />
                                     </UpdateParameters>
 									<DeleteParameters>
@@ -115,57 +105,40 @@
                                 </asp:SqlDataSource>
                             </div>
                             <div>
-                                <table class="style1">
-                                    <tr>
-                                        <td class="style2">
-                                            Service Name</td>
-                                        <td>
-                                            <asp:TextBox ID="txtServiceName" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Branch</td>
-                                        <td>
-                                            <asp:TextBox ID="txtBranch" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Street</td>
-                                        <td>
-                                            <asp:TextBox ID="txtStreet" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Province</td>
-                                        <td>
-                                            <asp:TextBox ID="txtProvince" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            City</td>
-                                        <td>
-                                            <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Country</td>
-                                        <td>
-                                            <asp:TextBox ID="txtCountry" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Service Fee</td>
-                                        <td>
-                                            <asp:TextBox ID="txtService" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                </table>
+                                <asp:FormView ID="FormView1" runat="server" DataKeyNames="id" 
+                                    DataSourceID="ccDb" DefaultMode="Insert" EnableModelValidation="True">
+                                    <InsertItemTemplate>
+                                        <h3>Add New Payment Service</h3>
+                                        <span class="txtLabel">Name:</span>
+                                        <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
+                                        <br />
+                                        <span class="txtLabel">Branch:</span>
+                                        <asp:TextBox ID="branchTextBox" runat="server" Text='<%# Bind("branch") %>' />
+                                        <br />
+                                        <span class="txtLabel">Street:</span>
+                                        <asp:TextBox ID="streetTextBox" runat="server" Text='<%# Bind("street") %>' />
+                                        <br />
+                                        <span class="txtLabel">Province:</span>
+                                        <asp:TextBox ID="provinceTextBox" runat="server" 
+                                            Text='<%# Bind("province") %>' />
+                                        <br />
+                                        <span class="txtLabel">City:</span>
+                                        <asp:TextBox ID="cityTextBox" runat="server" Text='<%# Bind("city") %>' />
+                                        <br />
+                                        <span class="txtLabel">Country:</span>
+                                        <asp:TextBox ID="countryTextBox" runat="server" Text='<%# Bind("country") %>' />
+                                        <br />
+                                        <span class="txtLabel">Service fee:</span>
+                                        <asp:TextBox ID="service_feeTextBox" runat="server" 
+                                            Text='<%# Bind("service_fee") %>' />
+                                        <br />
+
+                                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                                            CommandName="Insert" Text="Insert" />
+                                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                                            CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                                    </InsertItemTemplate>
+                                </asp:FormView>
                             </div>
                             </form>
 					    </div>
