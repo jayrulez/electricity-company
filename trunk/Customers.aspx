@@ -82,19 +82,7 @@
                                     ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
                                     SelectCommand="SELECT [first_name], [last_name], [street], [province], [city], [country], [email], [contact_num], [id] FROM [customer]"
                                     
-                                    UpdateCommand="UPDATE [customer] SET [first_name] = @first_name, [last_name] = @last_name, [street] = @street, [province] = @province, [city] = @city, [country] = @country, [email] = @email, [contact_num] = @contact_num WHERE [id] = @id"  
-                                    InsertCommand="INSERT INTO [customer] ([first_name], [last_name], [street], [province], [city], [country], [email], [contact_num]) VALUES (@first_name, @last_name, @street, @province, @city, @country, @email, @contact_num)"
-                                    DeleteCommand="DELETE FROM [customer] WHERE [id] = @id">
-									<InsertParameters>
-                                        <asp:Parameter Name="first_name" Type="String" />
-                                        <asp:Parameter Name="last_name" Type="String" />
-                                        <asp:Parameter Name="street" Type="String" />
-                                        <asp:Parameter Name="province" Type="String" />
-                                        <asp:Parameter Name="city" Type="String" />
-                                        <asp:Parameter Name="country" Type="String" />
-										<asp:Parameter Name="email" Type="String" />
-                                        <asp:Parameter Name="contact_num" Type="String" />
-                                    </InsertParameters>
+                                    UpdateCommand="UPDATE [customer] SET [first_name] = @first_name, [last_name] = @last_name, [street] = @street, [province] = @province, [city] = @city, [country] = @country, [email] = @email, [contact_num] = @contact_num WHERE [id] = @id">
                                     <UpdateParameters>
                                         <asp:Parameter Name="first_name" Type="String" />
                                         <asp:Parameter Name="last_name" Type="String" />
@@ -106,9 +94,6 @@
                                         <asp:Parameter Name="contact_num" Type="String" />
                                         <asp:Parameter Name="id" Type="Int32" />
                                     </UpdateParameters>
-									<DeleteParameters>
-										<asp:Parameter Name="id" Type="Int32" />
-									</DeleteParameters>
                                 </asp:SqlDataSource>
                             </div>
                             <div>
