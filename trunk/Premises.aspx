@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Premesis.aspx.cs" Inherits="Premesis" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Premises.aspx.cs" Inherits="Premises" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Premesis</title>
+    <title>Premises</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="language" content="en_us" />
     <link rel="stylesheet" type="text/css" href="./Css/common.css" />
@@ -31,7 +31,7 @@
 					<ul>
 						<li><a href="Default.aspx">Management Home</a></li>
 						<li><a href="Employees.aspx">Employees</a></li>
-						<li><a href="Premesis.aspx" >Premesis</a></li>
+						<li><a href="Premises.aspx" >Premises</a></li>
 						<li><a href="Meters.aspx" >Meters</a></li>
 						<li><a href="Customers.aspx" >Customers</a></li>
 						<li><a href="Billing.aspx" >Billing</a></li>
@@ -53,14 +53,14 @@
                                 GridLines="Vertical">
                                 <AlternatingRowStyle BackColor="#DCDCDC" />
                                 <Columns>
-                                    <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" 
+                                    <asp:BoundField DataField="id" HeaderText="Id" InsertVisible="False" 
                                         ReadOnly="True" SortExpression="id" />
-                                    <asp:BoundField DataField="street" HeaderText="street" 
+                                    <asp:BoundField DataField="street" HeaderText="Street" 
                                         SortExpression="street" />
-                                    <asp:BoundField DataField="province" HeaderText="province" 
+                                    <asp:BoundField DataField="province" HeaderText="Province" 
                                         SortExpression="province" />
-                                    <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
-                                    <asp:BoundField DataField="country" HeaderText="country" 
+                                    <asp:BoundField DataField="city" HeaderText="City" SortExpression="city" />
+                                    <asp:BoundField DataField="country" HeaderText="Country" 
                                         SortExpression="country" />
                                     <asp:CommandField ShowEditButton="True" />
                                 </Columns>
@@ -78,6 +78,7 @@
                                 DataSourceID="ccDb" DefaultMode="Insert" EnableModelValidation="True">
                                 
                                 <InsertItemTemplate>
+                                    <h3>Add New Premises</h3>
                                     <span class="txtLabel">Street:</span>
                                     <asp:TextBox ID="streetTextBox" runat="server" Text='<%# Bind("street") %>' />
                                     <br />
