@@ -80,7 +80,7 @@
                                 <asp:SqlDataSource ID="ccDb" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
                                     SelectCommand="SELECT [first_name], [last_name], [street], [province], [city], [country], [email], [contact_num], [id] FROM [customer]"
-                                    
+                                    InsertCommand="INSERT INTO [customer] ([first_name], [last_name], [street], [province], [city], [country], [email], [contact_num]) VALUES (@first_name, @last_name, @street, @province, @city, @country, @email, @contact_num)"
                                     UpdateCommand="UPDATE [customer] SET [first_name] = @first_name, [last_name] = @last_name, [street] = @street, [province] = @province, [city] = @city, [country] = @country, [email] = @email, [contact_num] = @contact_num WHERE [id] = @id">
                                     <UpdateParameters>
                                         <asp:Parameter Name="first_name" Type="String" />
