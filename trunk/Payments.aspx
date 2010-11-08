@@ -38,7 +38,7 @@
 				<div id="side-nav">
                     
 					<ul>
-						<li><a href="Default.aspx">Home</a></li>
+						<li><a href="Default.aspx">Management Home</a></li>
 						<li><a href="Employees.aspx">Employees</a></li>
 						<li><a href="Premesis.aspx" >Premesis</a></li>
 						<li><a href="Meters.aspx" >Meters</a></li>
