@@ -30,6 +30,12 @@ body {
 	padding: 10px;
 }
 
+#header #logo {
+	font-weight: bold;
+	color: #fff;
+	font-size: 17px;
+}
+
 #content {
 	margin: 10px 0;
 }

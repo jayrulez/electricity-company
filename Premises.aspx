@@ -23,6 +23,7 @@
 	<form id="form1" runat="server">
 	<div id="page">
 		<div id="header">
+            <div id="logo">OnWind Electricity</div>
 		</div>
 		<div id="content" class="clearfix">
 			<div id="sidebar">
