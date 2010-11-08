@@ -78,8 +78,8 @@
                                 </asp:GridView>
                                 <asp:SqlDataSource ID="ccDb" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
-                                    SelectCommand="SELECT [first_name], [last_name], [street], [province], [city], [country], [contact_num], [id] FROM [employee]"
-                                    
+                                    SelectCommand="SELECT [first_name], [last_name], [street], [province], [city], [country], [contact_num], [id] FROM [employee]" 
+                                    InsertCommand="INSERT INTO [employee] ([first_name], [last_name], [street], [province], [city], [country], [contact_num]) VALUES (@first_name, @last_name, @street, @province, @city, @country, @contact_num)"
                                     UpdateCommand="UPDATE [employee] SET [first_name] = @first_name, [last_name] = @last_name, [street] = @street, [province] = @province, [city] = @city, [country] = @country, [contact_num] = @contact_num WHERE [id] = @id">
                                     <UpdateParameters>
                                         <asp:Parameter Name="first_name" Type="String" />
