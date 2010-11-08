@@ -30,7 +30,7 @@
 					<ul>
 						<li><a href="Default.aspx">Management Home</a></li>
 						<li><a href="Employees.aspx">Employees</a></li>
-						<li><a href="Premesis.aspx" >Premesis</a></li>
+						<li><a href="Premises.aspx" >Premises</a></li>
 						<li><a href="Meters.aspx" >Meters</a></li>
 						<li><a href="Customers.aspx" >Customers</a></li>
 						<li><a href="Billing.aspx" >Billing</a></li>
@@ -71,7 +71,6 @@
                                         <asp:BoundField DataField="contact_num" HeaderText="Contact #" 
                                             SortExpression="contact_num" />
                                         <asp:CommandField ShowEditButton="True" />
-										<asp:CommandField ShowDeleteButton="True" />
                                     </Columns>
                                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                                     <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />

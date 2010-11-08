@@ -30,7 +30,7 @@
 					<ul>
 						<li><a href="Default.aspx">Management Home</a></li>
 						<li><a href="Employees.aspx">Employees</a></li>
-						<li><a href="Premesis.aspx" >Premesis</a></li>
+						<li><a href="Premises.aspx" >Premises</a></li>
 						<li><a href="Meters.aspx" >Meters</a></li>
 						<li><a href="Customers.aspx" >Customers</a></li>
 						<li><a href="Billing.aspx" >Billing</a></li>
