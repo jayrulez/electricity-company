@@ -103,7 +103,7 @@
                                     
                                     <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
                                     <InsertItemTemplate>
-                                        <h3>Add New Employee</h3>
+                                        <h3>Add New Customer</h3>
                                         <span class="txtLabel">First Name:</span>
                                         <asp:TextBox ID="first_nameTextBox" runat="server" 
                                             Text='<%# Bind("first_name") %>' />
