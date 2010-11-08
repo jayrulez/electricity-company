@@ -18,16 +18,6 @@
 
         });
     </script>
-    <style type="text/css">
-        .style1
-        {
-            width: 100%;
-        }
-        .style2
-        {
-            width: 348px;
-        }
-    </style>
 </head>
 <body>
 	<div id="page">
@@ -89,53 +79,41 @@
                                 </asp:SqlDataSource>
                             </div>
                             <div>
-                                
-                                <table class="style1">
-                                    <tr>
-                                        <td class="style2">
-                                            Amount</td>
-                                        <td>
-                                            <asp:TextBox ID="txtAmount" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Method</td>
-                                        <td>
-                                            <asp:TextBox ID="txtMethod" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Date</td>
-                                        <td>
-                                            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Paid By</td>
-                                        <td>
-                                            <asp:TextBox ID="txtPaidBy" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Billing Id</td>
-                                        <td>
-                                            <asp:TextBox ID="txtBillingId" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Service </td>
-                                        <td>
-                                            <asp:DropDownList ID="ddlPaymentService" runat="server">
-                                            </asp:DropDownList>
-                                        </td>
-                                    </tr>
-                                </table>
-                                
+                                <asp:FormView ID="FormViewPayment" runat="server" BackColor="White" 
+                                    BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" 
+                                    DataSourceID="ccDb" EnableModelValidation="True" GridLines="Vertical" 
+                                    DataKeyNames="id" DefaultMode="Insert">
+                                    
+                                    <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                                    <InsertItemTemplate>
+                                        <h3>Add New Payment</h3>
+                                        <span class="txtLabel">Amount:</span>
+                                        <asp:TextBox ID="amountTextBox" runat="server" 
+                                            Text='<%# Bind("amount") %>' />
+                                        <br />
+                                        <span class="txtLabel">Method:</span>
+                                        <asp:TextBox ID="methodTextBox" runat="server" 
+                                            Text='<%# Bind("method") %>' />
+                                        <br />
+                                        <span class="txtLabel">Date:</span>
+                                        <asp:TextBox ID="pay_dateTextBox" runat="server" Text='<%# Bind("pay_date") %>' />
+                                        <br />
+                                        <span class="txtLabel">Paid By:</span>
+                                        <asp:TextBox ID="paid_byTextBox" runat="server" 
+                                            Text='<%# Bind("paid_by") %>' />
+                                        <br />
+                                        <span class="txtLabel">Billing Id:</span>
+                                        <asp:TextBox ID="billing_idTextBox" runat="server" Text='<%# Bind("billing_id") %>' />
+                                        <br />
+                                        <span class="txtLabel">Service:</span>
+                                        <asp:DropDownList ID="ddlService" runat="server" Text='<%# Bind("service_id") %>' />
+                                        <br />
+                                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                                            CommandName="Insert" Text="Insert" />
+                                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                                            CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                                    </InsertItemTemplate>
+                                </asp:FormView>  
                             </div>
                             </form>
 					    </div>

@@ -97,64 +97,49 @@
                                 </asp:SqlDataSource>
                             </div>
                             <div>
-                                <table class="style1">
-                                    <tr>
-                                        <td class="style2">
-                                            First Name</td>
-                                        <td>
-                                            <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Last Name</td>
-                                        <td>
-                                            <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Street</td>
-                                        <td>
-                                            <asp:TextBox ID="txtStreet" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Province</td>
-                                        <td>
-                                            <asp:TextBox ID="txtProvince" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            City</td>
-                                        <td>
-                                            <asp:TextBox ID="txtCountry" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Country</td>
-                                        <td>
-                                            <asp:TextBox ID="txtEmailAddress" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Email Address</td>
-                                        <td>
-                                            <asp:TextBox ID="txtContactNumber" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Contact Number</td>
-                                        <td>
-                                            <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                </table>
+                                <asp:FormView ID="FormViewCustomer" runat="server" BackColor="White" 
+                                    BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" 
+                                    DataSourceID="ccDb" EnableModelValidation="True" GridLines="Vertical" 
+                                    DataKeyNames="id" DefaultMode="Insert">
+                                    
+                                    <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                                    <InsertItemTemplate>
+                                        <h3>Add New Employee</h3>
+                                        <span class="txtLabel">First Name:</span>
+                                        <asp:TextBox ID="first_nameTextBox" runat="server" 
+                                            Text='<%# Bind("first_name") %>' />
+                                        <br />
+                                        <span class="txtLabel">Last Name:</span>
+                                        <asp:TextBox ID="last_nameTextBox" runat="server" 
+                                            Text='<%# Bind("last_name") %>' />
+                                        <br />
+                                        <span class="txtLabel">Street:</span>
+                                        <asp:TextBox ID="streetTextBox" runat="server" Text='<%# Bind("street") %>' />
+                                        <br />
+                                        <span class="txtLabel">Province:</span>
+                                        <asp:TextBox ID="provinceTextBox" runat="server" 
+                                            Text='<%# Bind("province") %>' />
+                                        <br />
+                                        <span class="txtLabel">City:</span>
+                                        <asp:TextBox ID="cityTextBox" runat="server" Text='<%# Bind("city") %>' />
+                                        <br />
+                                        <span class="txtLabel">Country:</span>
+                                        <asp:TextBox ID="countryTextBox" runat="server" Text='<%# Bind("country") %>' />
+                                        <br />
+                                        <span class="txtLabel">Email Address:</span>
+                                        <asp:TextBox ID="emailTextBox" runat="server" 
+                                            Text='<%# Bind("email") %>' />
+                                        <br />
+                                        <span class="txtLabel">Contact Number:</span>
+                                        <asp:TextBox ID="contact_numTextBox" runat="server" 
+                                            Text='<%# Bind("contact_num") %>' />
+                                        <br />
+                                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                                            CommandName="Insert" Text="Insert" />
+                                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                                            CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                                    </InsertItemTemplate>
+                                </asp:FormView>
                             </div>
                             </form>
 					    </div>
