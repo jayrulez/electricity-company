@@ -36,8 +36,11 @@
 		<div id="content" class="clearfix">
 			<div id="sidebar">
 				<div id="side-nav">
+                    <h4>Management Options</h4>
 					<ul>
 						<li><a href="Employees.aspx">Employees</a></li>
+						<li><a href="Premesis.aspx" >Premesis</a></li>
+						<li><a href="Meters.aspx" >Meters</a></li>
 						<li><a href="Customers.aspx" >Customers</a></li>
 						<li><a href="Billing.aspx" >Billing</a></li>
 						<li><a href="PaymentServices.aspx" >Payment Services</a></li>
