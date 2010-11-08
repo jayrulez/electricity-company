@@ -89,3 +89,9 @@ body {
 }
 
 #footer {}
+
+.txtLabel {
+	display: inline-block;
+	width: 100px;
+	background: #99CCFF;
+}

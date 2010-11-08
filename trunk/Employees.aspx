@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Employees.aspx.cs" Inherits="Employees" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -18,21 +18,7 @@
 
         });
     </script>
-    <style type="text/css">
-        .style1
-        {
-            width: 100%;
-        }
-        .style2
-        {
-            width: 367px;
-        }
-        .style3
-        {
-            width: 458px;
-        }
-    </style>
-</head>
+    </head>
 <body>
 	<div id="page">
 		<div id="header">
@@ -90,17 +76,7 @@
                                     ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
                                     SelectCommand="SELECT [first_name], [last_name], [street], [province], [city], [country], [contact_num], [id] FROM [employee]"
                                     
-                                    UpdateCommand="UPDATE [employee] SET [first_name] = @first_name, [last_name] = @last_name, [street] = @street, [province] = @province, [city] = @city, [country] = @country, [contact_num] = @contact_num WHERE [id] = @id"  
-                                    InsertCommand="INSERT INTO [employee] ([first_name], [last_name], [street], [province], [city], [country], [contact_num]) VALUES (@first_name, @last_name, @street, @province, @city, @country, @contact_num)">
-                                    <InsertParameters>
-                                        <asp:Parameter Name="first_name" Type="String" />
-                                        <asp:Parameter Name="last_name" Type="String" />
-                                        <asp:Parameter Name="street" Type="String" />
-                                        <asp:Parameter Name="province" Type="String" />
-                                        <asp:Parameter Name="city" Type="String" />
-                                        <asp:Parameter Name="country" Type="String" />
-                                        <asp:Parameter Name="contact_num" Type="String" />
-                                    </InsertParameters>
+                                    UpdateCommand="UPDATE [employee] SET [first_name] = @first_name, [last_name] = @last_name, [street] = @street, [province] = @province, [city] = @city, [country] = @country, [contact_num] = @contact_num WHERE [id] = @id">
                                     <UpdateParameters>
                                         <asp:Parameter Name="first_name" Type="String" />
                                         <asp:Parameter Name="last_name" Type="String" />
@@ -114,59 +90,45 @@
                                 </asp:SqlDataSource>
                             </div>
 			                <div>
-                                <table class="style1">
-                                    <tr>
-                                        <td class="style2">
-                                            First Name</td>
-                                        <td class="style3">
-                                             <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="style2">
-                                            Last Name</td>
-                                    <td class="style3">
-                                        <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="style2">
-                                        Street
-                                    </td>
-                                    <td class="style3">
-                                        <asp:TextBox ID="txtStreet" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="style2">
-                                        Province
-                                    </td>
-                                    <td class="style3">
-                                        <asp:TextBox ID="txtProvince" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="style2">
-                                        City</td>
-                                    <td class="style3">
-                                        <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="style2">
-                                        Country</td>
-                                    <td class="style3">
-                                        <asp:TextBox ID="txtCountry" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="style2">
-                                        Contact Number</td>
-                                    <td class="style3">
-                                        <asp:TextBox ID="txtContactNumber" runat="server"></asp:TextBox>
-                                    </td>
-                                </tr>
-                            </table>
+                                <asp:FormView ID="FormViewEmployee" runat="server" BackColor="White" 
+                                    BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" 
+                                    DataSourceID="ccDb" EnableModelValidation="True" GridLines="Vertical" 
+                                    DataKeyNames="id" DefaultMode="Insert">
+                                    
+                                    <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                                    <InsertItemTemplate>
+                                        <h3>Add New Employee</h3>
+                                        <span class="txtLabel">First Name:</span>
+                                        <asp:TextBox ID="first_nameTextBox" runat="server" 
+                                            Text='<%# Bind("first_name") %>' />
+                                        <br />
+                                        <span class="txtLabel">Last Name:</span>
+                                        <asp:TextBox ID="last_nameTextBox" runat="server" 
+                                            Text='<%# Bind("last_name") %>' />
+                                        <br />
+                                        <span class="txtLabel">Street:</span>
+                                        <asp:TextBox ID="streetTextBox" runat="server" Text='<%# Bind("street") %>' />
+                                        <br />
+                                        <span class="txtLabel">Province:</span>
+                                        <asp:TextBox ID="provinceTextBox" runat="server" 
+                                            Text='<%# Bind("province") %>' />
+                                        <br />
+                                        <span class="txtLabel">City:</span>
+                                        <asp:TextBox ID="cityTextBox" runat="server" Text='<%# Bind("city") %>' />
+                                        <br />
+                                        <span class="txtLabel">Country:</span>
+                                        <asp:TextBox ID="countryTextBox" runat="server" Text='<%# Bind("country") %>' />
+                                        <br />
+                                        <span class="txtLabel">Contact Number:</span>
+                                        <asp:TextBox ID="contact_numTextBox" runat="server" 
+                                            Text='<%# Bind("contact_num") %>' />
+                                        <br />
+                                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                                            CommandName="Insert" Text="Insert" />
+                                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                                            CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                                    </InsertItemTemplate>
+                                </asp:FormView>
                             </div>
                             </form>
 					    </div>
