@@ -8,6 +8,9 @@ public partial class Payments : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (this.Session["login"] == null)
+        {
+            this.Response.Redirect("./Login.aspx");
+        }
     }
 }

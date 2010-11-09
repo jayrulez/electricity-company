@@ -30,7 +30,7 @@ public partial class Login : System.Web.UI.Page
             return true;
         }
 
-        lblStatus.Text = "Username or password is correct.";
+        lblStatus.Text = "<div class=\"error\">Username or password is correct</div>.";
 
         return false;
     }
