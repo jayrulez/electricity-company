@@ -73,6 +73,7 @@
 											SortExpression="total_charge" />
 										<asp:BoundField DataField="meter_id" HeaderText="Meter Id" 
 											SortExpression="meter_id" />
+										<asp:CommandField ShowEditButton="True" />
                                     </Columns>
                                     <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                                     <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
@@ -82,7 +83,19 @@
                                 </asp:GridView>
                                 <asp:SqlDataSource ID="ccDb" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
-                                    SelectCommand="SELECT [id], [cycle_start], [cycle_end], [consumption], [due_date], [current_charge], [previous_balance], [total_charge], [meter_id] FROM [billing]">
+                                    SelectCommand="SELECT [id], [cycle_start], [cycle_end], [consumption], [due_date], [current_charge], [previous_balance], [total_charge], [meter_id] FROM [billing]"
+                                    UpdateCommand="UPDATE [billing] SET [cycle_start] = @cycle_start, [cycle_end] = @cycle_end, [consumption] = @consumption, [due_date] = @dute_date, [current_charge] = @current_charge, [previous_balance] = @previous_balance, [total_charge] = @total_charge, [meter_id] = @meter_id, WHERE [id] = @id">
+                                    <UpdateParameters>
+                                        <asp:Parameter Name="cycle_start" Type="String" />
+                                        <asp:Parameter Name="cycle_end" Type="String" />
+                                        <asp:Parameter Name="consumption" Type="Decimal" />
+                                        <asp:Parameter Name="due_date" Type="String" />
+                                        <asp:Parameter Name="current_charge" Type="Decimal" />
+                                        <asp:Parameter Name="previous_balance" Type="Decimal" />
+                                        <asp:Parameter Name="total_charge" Type="Decimal" />
+                                        <asp:Parameter Name="meter_id" Type="Int32" />
+                                        <asp:Parameter Name="id" Type="Int32" />
+                                    </UpdateParameters>
                                 </asp:SqlDataSource>
                             </div>  
                             </form> 
