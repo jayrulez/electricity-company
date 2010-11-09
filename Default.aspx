@@ -46,6 +46,20 @@
 					    <div id="widebar-header">
 					    </div>
 					    <div id="widebar-body">
+							<table>
+								<tr style="text-align: center; font-size: 14px; font-weight: bold;">
+									<td><a href="Default.aspx"><img src="./Images/home.png" alt="*"/></a><br/>Management Home</td>
+									<td><a href="Employees.aspx"><img src="./Images/employees.png" alt="*"/></a><br/>Employees</td>
+									<td><a href="Premises.aspx" ><img src="./Images/premises.png" alt="*"/></a><br/>Premises</td>
+									<td><a href="Meters.aspx" ><img src="./Images/meters.png" alt="*"/></a><br/>Meters</td>
+								</tr>
+								<tr style="text-align: center; font-size: 14px; font-weight: bold;">
+									<td><a href="Customers.aspx" ><img src="./Images/customers.png" alt="*"/></a><br/>Customers</td>
+									<td><a href="Billing.aspx" ><img src="./Images/billing.png" alt="*"/></a><br/>Billing</td>
+									<td><a href="PaymentServices.aspx" ><img src="./Images/paymentServices.png" alt="*"/></a><br/>Payment Services</td>
+									<td><a href="Payments.aspx" ><img src="./Images/payments.png" alt="*"/></a><br/>Payments</td>
+								</tr>
+							</table>
 					    </div>
                     </div>
 				</div>
