@@ -84,7 +84,7 @@
                                 <asp:SqlDataSource ID="ccDb" runat="server" 
                                     ConnectionString="<%$ ConnectionStrings:onwindConnectionString %>" 
                                     SelectCommand="SELECT [id], [cycle_start], [cycle_end], [consumption], [due_date], [current_charge], [previous_balance], [total_charge], [meter_id] FROM [billing]"
-                                    UpdateCommand="UPDATE [billing] SET [cycle_start] = @cycle_start, [cycle_end] = @cycle_end, [consumption] = @consumption, [due_date] = @dute_date, [current_charge] = @current_charge, [previous_balance] = @previous_balance, [total_charge] = @total_charge, [meter_id] = @meter_id, WHERE [id] = @id">
+                                    UpdateCommand="UPDATE [billing] SET [cycle_start] = @cycle_start, [cycle_end] = @cycle_end, [consumption] = @consumption, [due_date] = @due_date, [current_charge] = @current_charge, [previous_balance] = @previous_balance, [total_charge] = @total_charge, [meter_id] = @meter_id, WHERE [id] = @id">
                                     <UpdateParameters>
                                         <asp:Parameter Name="cycle_start" Type="String" />
                                         <asp:Parameter Name="cycle_end" Type="String" />
