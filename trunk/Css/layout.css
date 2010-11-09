@@ -106,7 +106,7 @@ body {
 }
 
 #FormViewEmployee_InsertButton, #FormViewEmployee_InsertCancelButton, #FormView1_InsertButton, #FormView1_InsertCancelButton,
-#FormViewPayment_InsertButton, #FormViewPayment_InsertCancelButton {
+#FormViewPayment_InsertButton, #FormViewPayment_InsertCancelButton, #linkButton {
 	display: inline-block;
 	padding: 3px 8px;
 	margin-top: 5px;
@@ -120,4 +120,8 @@ body {
 
 #FormViewEmployee_InsertCancelButton, #FormView1_InsertCancelButton, #FormViewPayment_InsertCancelButton {
 	border: 1px solid #ff1111;
+}
+
+.message .error {
+	color: #CB3300;
 }
